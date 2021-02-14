@@ -1,0 +1,47 @@
+@echo off
+SetLocal enabledelayedexpansion
+title Калькулятор
+color 1a 
+:m1
+echo Выберите действие 
+Echo.
+Echo 1 - Сложение
+Echo 2 - Вычетание
+Echo 3 - Умножение
+echo 4 - Деление 
+echo.
+Set /p choice="Ваш выбор: "
+
+if "%choice%"=="1" goto :summa
+if "%choice%"=="2" goto :minus
+if "%choice%"=="3" goto :multiply
+if "%choice%"=="4" goto :split
+if not defined %choice% goto m1 
+:summa
+echo Введите числа 
+set /p a="Первое значение: "
+set /p b="Второе значение: "
+set /a c=(%a%)+(%b%)
+echo Ответ %c%
+goto m1
+:minus
+echo Введите число
+set /p a="Первое значение: "
+set /p b="Второе значение: "
+set /a c=(%a%)-(%b%)
+echo Ответ %c%
+goto m1
+:multiply
+echo Введите число
+set /p a="Первое значение: "
+set /p b="Второе значение: "
+set /a c=(%a%)*(%b%)
+echo Ответ %c%
+goto m1
+:split
+echo Введите число
+set /p a="Первое значение: "
+set /p b="Второе значение: "
+set /a c=(%a%)/(%b%)
+echo Ответ %c%
+goto m1
